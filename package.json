@@ -1,0 +1,29 @@
+{
+	"name": "create-nextia",
+	"description": "nextia command",
+	"version": "0.0.8",
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": ">=22"
+	},
+	"author": {
+		"name": "Sinuhe Maceda",
+		"email": "sinuhe.dev@gmail.com",
+		"url": "https://sinuhe.dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sinuhedev/create-nextia.git"
+	},
+	"homepage": "https://github.com/sinuhedev/create-nextia",
+	"keywords": [
+		"react"
+	],
+	"bin": {
+		"create-nextia": "src/bin.js"
+	},
+	"scripts": {
+		"start": "node src/bin.js "
+	}
+}
