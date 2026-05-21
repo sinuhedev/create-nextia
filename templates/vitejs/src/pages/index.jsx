@@ -56,39 +56,9 @@ export default function Pages() {
       }}
     >
       <header style={{ display: 'flex', gap: '20px', margin: '20px' }}>
-        <Icon id="globe" width="24" />
-
         <Translate />
 
         <I18n value="page.name" args={['Sinuhe', 'Maceda', 'Bouchan']} />
-
-        <button
-          type="button"
-          className="btn-md"
-          onClick={(e) => fx.increment(e)}
-        >
-          increment
-        </button>
-        {'  '}
-        <button
-          type="button"
-          className="btn-md"
-          onClick={(e) => fx.decrement(e)}
-        >
-          decrement
-        </button>
-        {'  '}
-        <button
-          type="button"
-          className="btn-md"
-          onClick={() => fx.zero({ value: 0 })}
-        >
-          zero
-        </button>
-        {'  '}
-        {state.num}
-        {'  '}
-        {state.loading ? <span> Loading... </span> : <span> View.. </span>}
       </header>
 
       <aside className="m-2">
@@ -100,40 +70,6 @@ export default function Pages() {
         </Link>
         <Link href="#/env" className="mr-2">
           /env
-        </Link>
-        <Link href="#/my-context" className="mr-2">
-          /my-context
-        </Link>
-        <Link href="#/mockapi" className="mr-2">
-          /mockapi
-        </Link>
-        <Link
-          href="#/search-params"
-          value={{ id: 1, user: 'Sinuhe' }}
-          className="mr-2"
-        >
-          /search-params
-        </Link>
-        <Link href="#/subpage/hello" className="mr-2">
-          /subpage/hello
-        </Link>
-        <Link href="#/translate" className="mr-2">
-          /translate
-        </Link>
-        <Link href="#/view-transition" className="mr-2">
-          /view-transition
-        </Link>
-        <Link href="#/images" className="mr-2">
-          /images
-        </Link>
-        <Link href="#/icons" className="mr-2">
-          /icons
-        </Link>
-        <Link href="#/resize" className="mr-2">
-          /resize
-        </Link>
-        <Link href="#/dashboard" className="mr-2">
-          /not-found
         </Link>
       </aside>
 
