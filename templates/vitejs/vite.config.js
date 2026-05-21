@@ -1,101 +1,63 @@
-import { version } from './package.json'
 import { execSync } from 'node:child_process'
-import { readFile } from 'node:fs/promises'
-import { defineConfig } from 'vite'
-import autoprefixer from 'autoprefixer'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import { version } from './package.json'
 
 export default defineConfig(({ mode }) => {
   const CWD = process.cwd()
-  const port = 3000
 
   return {
     server: {
       host: '0.0.0.0',
-      port
+      port: 3000
     },
 
-    preview: {
-      port
-    },
-
-    base: '',
+    root: `src`,
     envDir: CWD,
-    root: CWD + '/src',
-    publicDir: CWD + '/public',
+    envPrefix: 'PUBLIC_',
+    publicDir: `${CWD}/public`,
+
     resolve: {
       alias: {
-        assets: CWD + '/src/assets',
-        components: CWD + '/src/components',
-        containers: CWD + '/src/containers',
-        services: CWD + '/src/services',
-        theme: CWD + '/src/theme',
-        utils: CWD + '/src/utils'
+        assets: `${CWD}/src/assets`,
+        components: `${CWD}/src/components`,
+        services: `${CWD}/src/services`,
+        utils: `${CWD}/src/utils`
       }
     },
 
     build: {
       outDir: '../out',
-      assetsDir: 'assets',
       emptyOutDir: true
-    },
-
-    css: {
-      postcss: {
-        plugins: [
-          autoprefixer
-        ]
-      }
     },
 
     plugins: [
       react(),
       {
         name: 'html',
-        transformIndexHtml (html) {
-          let gitHash = ''
+        transformIndexHtml(html) {
+          let gitHash = 'unknown'
           try {
-            gitHash = execSync('git rev-parse --short HEAD 2> /dev/null').toString().trim()
-          } catch (e) { }
+            gitHash = execSync('git rev-parse --short HEAD').toString().trim()
+          } catch {}
 
-          return html.replaceAll('%VERSION%', `version=${version}, env=${mode}, release-date=${new Date()}, git-hash=${gitHash}`)
-        }
-      },
-      {
-        name: 'svg',
-        async transform (src, id) {
-          let code = id.split('?')[0]
-          const type = id.split('?')[1]
-
-          if (type === 'raw') {
-            code = await readFile(code, 'utf8')
-            code = code
-              .replace(/\s{2,}/g, ' ') // multiple spaces to single space
-              .replace(/\n/g, '') // remove newlines
-              .replace(/\t/g, '') // remove tabs
-              .replace(/>\s+</g, '><') // remove space between tags
-              .trim()
-            return `export default ${JSON.stringify(code)};`
-          }
+          return html.replaceAll(
+            '%VERSION%',
+            `version=${version}, env=${mode}, date=${new Date().toISOString()}, commit=${gitHash}`
+          )
         }
       }
     ],
 
     test: {
       root: './',
-      watch: false,
       environment: 'jsdom',
-      include: ['test/**/*.js', 'test/**/*.jsx'],
+      include: ['test/**/*.test.{js,jsx}'],
       coverage: {
-        all: true,
         reportsDirectory: '.coverage',
-        include: ['src/**/*.js', 'src/**/*.jsx'],
-        exclude: [
-          'src/index.jsx',
-          'src/assets/i18n'
-        ]
+        exclude: ['src/assets', 'src/components/index.js', 'src/index.jsx'],
+        include: ['src/**/*.{js,jsx}']
       }
     }
-
   }
 })

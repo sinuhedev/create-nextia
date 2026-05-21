@@ -1,17 +1,13 @@
-import { useQueryString } from './hooks'
+import { version } from 'nextia'
 
-const env = import.meta.env
+const env = Object.freeze({
+  ...import.meta.env,
+  VERSION: version(),
+  WINDOW_RESIZE: { md: 640, lg: 1024, xl: 1280 }
+})
 
-async function startViewTransition (fun = () => {}, ref, animation) {
-  if (!document.startViewTransition) return fun()
-
-  ref.style.viewTransitionName = animation
-  await document.startViewTransition(fun).finished
-  ref.style.viewTransitionName = ''
+function sum(a, b) {
+  return a + b
 }
 
-export {
-  env,
-  useQueryString,
-  startViewTransition
-}
+export { env, sum }

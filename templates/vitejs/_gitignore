@@ -1,9 +1,7 @@
 node_modules
 out
 
-.coverage
 .env
 .env.*
 
-deploy
-deploy-variables
+.coverage
