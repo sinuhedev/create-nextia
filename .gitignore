@@ -1,2 +1,4 @@
 node_modules
 my-app
+
+templates/*/package-lock.json
