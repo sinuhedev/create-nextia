@@ -1,14 +1,12 @@
 # create-nextia
 
-## nextia command
-
-# Go to test
+## Go to test
 ```sh
 npm i
 node --run test:my-app
 ```
 
-## create project
+## Create project
 ```sh
 npm create nextia@latest my-app
 ```
