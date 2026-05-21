@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 48 48"
+   fill="none"
+   stroke="currentColor"
+   stroke-width="1"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   version="1.1"
+   id="icons"
+   sodipodi:docname="icons.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
+      id="defs" />
+   <sodipodi:namedview
+      id="namedview"
+      pagecolor="#505050"
+      bordercolor="#ffffff"
+      borderopacity="1"
+      inkscape:showpageshadow="0"
+      inkscape:pageopacity="0"
+      inkscape:pagecheckerboard="1"
+      inkscape:deskcolor="#505050"
+      showgrid="false"
+      showguides="true"
+      inkscape:zoom="1.3"
+      inkscape:cx="1.3e+02"
+      inkscape:cy="1.1e+02"
+      inkscape:current-layer="icons" />
+   <g
+      id="globe"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="12"
+         cy="12"
+         r="10"
+         id="circle1" />
+      <line
+         x1="2"
+         y1="12"
+         x2="22"
+         y2="12"
+         id="line1" />
+      <path
+         d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+         id="path1" />
+   </g>
+   <g
+      id="camera"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+         id="path2" />
+      <circle
+         cx="12"
+         cy="13"
+         r="4"
+         id="circle2" />
+   </g>
+   <g
+      id="caret-down"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M 16.924437,11.676179 H 6.8175139 l 5.0534661,5.053479 z"
+         fill="currentColor"
+         id="path3" />
+   </g>
+   <g
+      id="caret-up"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M 16.92445,16.729618 H 6.8174614 l 5.0534836,-5.053534 z"
+         fill="currentColor"
+         id="path4" />
+   </g>
+   <g
+      id="check"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M 11,13 7.8,11 6.3,12 11,16 18,9.2 16,7.8 Z"
+         fill="currentColor"
+         id="path5" />
+   </g>
+   <g
+      id="chevron-arrow-left"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z"
+         fill="currentColor"
+         id="path6" />
+   </g>
+   <g
+      id="chevron-arrow-right"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z"
+         fill="currentColor"
+         id="path7" />
+   </g>
+   <g
+      id="circle"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="13"
+         cy="13"
+         r="5"
+         id="circle7" />
+   </g>
+   <g
+      id="current-location"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="12.218931"
+         cy="11.8985"
+         r="8"
+         id="circle8" />
+      <circle
+         cx="12.218931"
+         cy="11.8985"
+         r="3"
+         fill="currentColor"
+         id="circle9" />
+      <rect
+         fill="currentColor"
+         width="1.2"
+         height="0.5"
+         x="21"
+         y="12"
+         id="rect9" />
+      <rect
+         fill="currentColor"
+         width="1.2"
+         height="0.5"
+         x="2"
+         y="12"
+         id="rect10" />
+      <rect
+         fill="currentColor"
+         width="0.5"
+         height="1.2"
+         x="12"
+         y="2"
+         id="rect11" />
+      <rect
+         fill="currentColor"
+         width="0.5"
+         height="1.2"
+         x="12"
+         y="20.5"
+         id="rect12" />
+   </g>
+   <g
+      id="g12"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="12"
+         cy="12"
+         r="10"
+         id="circle12" />
+      <line
+         x1="2"
+         y1="12"
+         x2="22"
+         y2="12"
+         id="line12" />
+      <path
+         d="M 12,2 A 15,15 0 0 1 16,12 15,15 0 0 1 12,22 15,15 0 0 1 8,12 15,15 0 0 1 12,2 Z"
+         id="path12" />
+   </g>
+   <g
+      id="help"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="12"
+         cy="12"
+         r="10"
+         id="circle13" />
+      <path
+         d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+         id="path13" />
+      <line
+         x1="12"
+         y1="17"
+         x2="12.01"
+         y2="17"
+         id="line13" />
+   </g>
+   <g
+      id="layer"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <polygon
+         points="12 2 2 7 12 12 22 7 12 2"
+         id="polygon13" />
+      <polyline
+         points="2 17 12 22 22 17"
+         id="polyline13" />
+      <polyline
+         points="2 12 12 17 22 12"
+         id="polyline14" />
+   </g>
+   <g
+      id="log-in"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"
+         id="path14" />
+      <polyline
+         points="10 17 15 12 10 7"
+         id="polyline15" />
+      <line
+         x1="15"
+         y1="12"
+         x2="3"
+         y2="12"
+         id="line15" />
+   </g>
+   <g
+      id="maximize"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+         id="path15" />
+   </g>
+   <g
+      id="menu"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <line
+         x1="3"
+         y1="12"
+         x2="21"
+         y2="12"
+         id="line16" />
+      <line
+         x1="3"
+         y1="6"
+         x2="21"
+         y2="6"
+         id="line17" />
+      <line
+         x1="3"
+         y1="18"
+         x2="21"
+         y2="18"
+         id="line18" />
+   </g>
+   <g
+      id="minus"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <line
+         x1="5"
+         y1="12"
+         x2="19"
+         y2="12"
+         id="line19" />
+   </g>
+   <g
+      id="plus-circle"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="12"
+         cy="12"
+         r="10"
+         id="circle19" />
+      <line
+         x1="12"
+         y1="8"
+         x2="12"
+         y2="16"
+         id="line20" />
+      <line
+         x1="8"
+         y1="12"
+         x2="16"
+         y2="12"
+         id="line21" />
+   </g>
+   <g
+      id="plus-square"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <rect
+         x="3"
+         y="3"
+         width="18"
+         height="18"
+         rx="2"
+         ry="2"
+         id="rect21" />
+      <line
+         x1="12"
+         y1="8"
+         x2="12"
+         y2="16"
+         id="line22" />
+      <line
+         x1="8"
+         y1="12"
+         x2="16"
+         y2="12"
+         id="line23" />
+   </g>
+   <g
+      id="plus"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <line
+         x1="12"
+         y1="5"
+         x2="12"
+         y2="19"
+         id="line24" />
+      <line
+         x1="5"
+         y1="12"
+         x2="19"
+         y2="12"
+         id="line25" />
+   </g>
+   <g
+      id="point"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="12"
+         cy="12"
+         r="5"
+         fill="currentColor"
+         id="circle25" />
+   </g>
+   <g
+      id="power-off"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M18.36 6.64a9 9 0 1 1-12.73 0"
+         id="path25" />
+      <line
+         x1="12"
+         y1="2"
+         x2="12"
+         y2="12"
+         id="line26" />
+   </g>
+   <g
+      id="rotate"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <polyline
+         points="23 4 23 10 17 10"
+         id="polyline26" />
+      <path
+         d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"
+         id="path26" />
+   </g>
+   <g
+      id="share"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <circle
+         cx="18"
+         cy="5"
+         r="3"
+         id="circle26" />
+      <circle
+         cx="6"
+         cy="12"
+         r="3"
+         id="circle27" />
+      <circle
+         cx="18"
+         cy="19"
+         r="3"
+         id="circle28" />
+      <line
+         x1="8.59"
+         y1="13.51"
+         x2="15.42"
+         y2="17.49"
+         id="line28" />
+      <line
+         x1="15.41"
+         y1="6.51"
+         x2="8.59"
+         y2="10.49"
+         id="line29" />
+   </g>
+   <g
+      id="trash"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <polyline
+         points="3 6 5 6 21 6"
+         id="polyline29" />
+      <path
+         d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+         id="path29" />
+      <line
+         x1="10"
+         y1="11"
+         x2="10"
+         y2="17"
+         id="line30" />
+      <line
+         x1="14"
+         y1="11"
+         x2="14"
+         y2="17"
+         id="line31" />
+   </g>
+   <g
+      id="upload"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+         id="path31" />
+      <polyline
+         points="17 8 12 3 7 8"
+         id="polyline31" />
+      <line
+         x1="12"
+         y1="3"
+         x2="12"
+         y2="15"
+         id="line32" />
+   </g>
+   <g
+      id="user"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+         id="path32" />
+      <circle
+         cx="12"
+         cy="7"
+         r="4"
+         id="circle32" />
+   </g>
+   <g
+      id="users"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <path
+         d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+         id="path33" />
+      <circle
+         cx="9"
+         cy="7"
+         r="4"
+         id="circle33" />
+      <path
+         d="M23 21v-2a4 4 0 0 0-3-3.87"
+         id="path34" />
+      <path
+         d="M16 3.13a4 4 0 0 1 0 7.75"
+         id="path35" />
+   </g>
+   <g
+      id="video"
+      style="display:none"
+      sodipodi:insensitive="true">
+      <polygon
+         points="23 7 16 12 23 17 23 7"
+         id="polygon35" />
+      <rect
+         x="1"
+         y="5"
+         width="15"
+         height="14"
+         rx="2"
+         ry="2"
+         id="rect35" />
+   </g>
+</svg>

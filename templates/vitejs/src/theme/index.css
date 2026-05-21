@@ -1,0 +1,38 @@
+@import './util.css';
+@import './animations.css';
+
+:root {
+	--primary-color: #344188;
+	--primary-color-50: #3441887a;
+	--link: #5fac9f;
+	--body-bg: #282c34;
+	--body-color: #a8a8a8;
+	--font-family: 'Roboto'
+}
+
+/**
+ * html
+ */
+
+html,
+body {
+	background-color: var(--body-bg);
+	color: var(--body-color);
+	font-family: var(--font-family);
+}
+
+a {
+	color: var(--link);
+}
+
+.mr-2 {
+	margin-right: 20px;
+}
+
+.m-2 {
+	margin: 20px;
+}
+
+.p-2 {
+	padding: 20px;
+}

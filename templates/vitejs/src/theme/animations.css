@@ -1,0 +1,30 @@
+:root {
+  view-transition-name: none;
+}
+
+/**
+ * fade 
+ */
+
+@keyframes fade {
+  0% {
+    opacity: var(--start, 1);
+  }
+
+  100% {
+    opacity: var(--end, 1);
+  }
+}
+
+::view-transition-new(fade),
+::view-transition-old(fade) {
+  animation: fade ease 0.3s;
+}
+
+::view-transition-new(fade) {
+  --start: 0;
+}
+
+::view-transition-old(fade) {
+  --end: 0;
+}
