@@ -1,6 +1,6 @@
 node_modules
 my-app
 
-templates/*/package-lock.json
+templates/**/package-lock.json
 
 /biome.json
