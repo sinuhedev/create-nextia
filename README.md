@@ -5,7 +5,6 @@
 # Go to test
 ```sh
 npm i
-npm run test:my-app
 node --run test:my-app
 ```
 
