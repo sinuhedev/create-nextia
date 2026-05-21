@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/sinuhedev/create-nextia",
   "keywords": [
-    "react"
+    "nextia"
   ],
   "bin": {
     "create-nextia": "src/bin.js"

@@ -27,6 +27,13 @@ const toPascalCase = (str) =>
     .map(([first, ...rest]) => first.toUpperCase() + rest.join(''))
     .join('')
 
+const getNextiaVersion = async () => {
+  const res = await fetch(`https://registry.npmjs.org/nextia`)
+  const data = await res.json()
+
+  return data['dist-tags'].latest
+}
+
 async function createPage(name) {
   const dirName = `./src/pages/${name}`
   const pageName = `${toPascalCase(name)}Page`
@@ -138,7 +145,8 @@ async function createProject(name) {
       mv('env.dev'),
       mv('gitignore'),
       replaceToken('README.md', 'TEMPLATE', name),
-      replaceToken('package.json', 'TEMPLATE', name)
+      replaceToken('package.json', 'TEMPLATE', name),
+      replaceToken('package.json', 'latest', await getNextiaVersion())
     ])
   } catch (err) {
     console.error(err)
