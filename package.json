@@ -25,6 +25,7 @@
   },
   "scripts": {
     "test:my-app": "src/bin.js my-app",
+    "test:version": "src/bin.js",
     "test:page": "cd my-app ; ../src/bin.js page my-page",
     "test:component": "cd my-app ; node ../src/bin.js component MyComponent"
   }

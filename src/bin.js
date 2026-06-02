@@ -19,6 +19,9 @@ import {
 } from 'node:fs/promises'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import packageJson from '../package.json' with { type: 'json' }
+
+const { version } = packageJson
 
 const toPascalCase = (str) =>
   str
@@ -174,7 +177,10 @@ async function main() {
 
     default:
       if (ARG1) await createProject(ARG1)
-      else console.warn('npm create nextia <ProjectName>')
+      else {
+        console.info(`nextia v${version}`)
+        console.warn('npm create nextia <ProjectName>')
+      }
       break
   }
 }
