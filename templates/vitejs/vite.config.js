@@ -37,13 +37,12 @@ export default defineConfig(({ mode }) => {
         name: 'html',
         transformIndexHtml(html) {
           let gitHash = 'unknown'
+
           try {
-            gitHash = execSync('git rev-parse --short HEAD', {
-              stdio: 'ignore'
-            })
-              .toString()
-              .trim()
-          } catch {}
+            gitHash = execSync('git rev-parse --short HEAD').toString().trim()
+          } catch (e) {
+            console.error(e)
+          }
 
           return html.replaceAll(
             '%VERSION%',
