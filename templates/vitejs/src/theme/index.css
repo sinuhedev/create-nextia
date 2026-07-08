@@ -10,7 +10,7 @@
 :root {
   --primary-color: #344188;
   --primary-color-50: #3441887a;
-  --link: #5fac9f;
+  --link: #77a6c2;
   --body-bg: #282c34;
   --body-color: #a8a8a8;
   --font-family: "Roboto";
@@ -25,55 +25,6 @@ body {
 
 a {
   color: var(--link);
-}
-
-p {
-  margin: 0px;
-}
-
-pre {
-  color: gray;
-  font-size: 12px;
-  max-height: 700px;
-  overflow: auto;
-}
-
-select {
-  height: 30px;
-  width: 100px;
-}
-
-button {
-  cursor: pointer;
-  margin: 10px;
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-input[type="text"] {
-  margin: 20px;
-  height: 30px;
-  width: 180px;
-}
-
-input[type="checkbox"] {
-  height: 30px;
-  width: 30px;
-}
-
-input[type="radio"] {
-  height: 30px;
-  width: 30px;
-}
-
-.btn-md {
-  margin: 0;
-  height: 30px;
-  padding: 0 10px;
-  font-size: 12px;
 }
 
 .mr-2 {

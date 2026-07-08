@@ -1,9 +1,17 @@
-import { useFx } from 'nextia'
+const initialState = {
+  id: 0
+}
 
-export default () => {
-  const initialState = {}
+function increment({ state, put }) {
+  put({ id: state.id + 1 })
+}
 
-  return useFx({
-    initialState
-  })
+function decrement({ state, put }) {
+  put({ id: state.id - 1 })
+}
+
+export default {
+  initialState,
+  increment,
+  decrement
 }

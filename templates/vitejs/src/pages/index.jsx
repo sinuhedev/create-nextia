@@ -1,5 +1,5 @@
 import i18n from 'assets/i18n.json'
-import icons from 'assets/icons.svg'
+import icons from 'assets/icons.svg?raw'
 import { Translate } from 'components'
 import {
   I18n,
@@ -7,15 +7,20 @@ import {
   Link,
   Pagex,
   startViewTransition,
+  useFx,
   useQueryString,
   useResize
 } from 'nextia'
 import { lazy, useEffect, useRef, useState } from 'react'
 import { env } from 'utils'
-import useFunctions from './functions.js'
+import functions from './functions.js'
 
 export default function Pages() {
-  const pages = useFunctions()
+  const pages = useFx(functions, (initialState) => {
+    return {
+      num: 2087
+    }
+  })
   const { state, fx } = pages
 
   const [Page, setPage] = useState()
@@ -51,11 +56,12 @@ export default function Pages() {
       value={{
         context: pages,
         icons,
-        i18n,
-        logger: env.DEV && env.PUBLIC_LOGGER === 'true'
+        i18n
       }}
     >
       <header style={{ display: 'flex', gap: '20px', margin: '20px' }}>
+        <Icon id="exit" width="24" className="animate" />
+
         <Translate />
 
         <I18n value="page.name" args={['Sinuhe', 'Maceda', 'Bouchan']} />
@@ -65,11 +71,17 @@ export default function Pages() {
         <Link href="/" className="mr-2">
           /
         </Link>
+
         <Link href="#/" className="mr-2">
           /home
         </Link>
+
         <Link href="#/env" className="mr-2">
           /env
+        </Link>
+
+        <Link href="#/dashboard" className="mr-2">
+          /not-found
         </Link>
       </aside>
 
