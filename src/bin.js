@@ -47,10 +47,11 @@ async function createPage(name) {
     // index.jsx
     writeFile(
       `${dirName}/index.jsx`,
-      `import useFunctions from './functions'
+      `import { useFx } from 'nextia'
+import functions from './functions'
 
 export default function ${pageName}() {
-  const { state, fx } = useFunctions()
+    const { state, fx } = useFx(functions)
 
   return (
     <section>
@@ -64,14 +65,10 @@ export default function ${pageName}() {
     // function.js
     writeFile(
       `${dirName}/functions.js`,
-      `import { useFx } from 'nextia'
+      `const initialState = {}
 
-export default () => {
-  const initialState = {}
-
-  return useFx({
-    initialState
-  })
+export default {
+  initialState
 }
 `
     )
