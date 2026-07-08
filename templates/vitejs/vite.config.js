@@ -40,9 +40,7 @@ export default defineConfig(({ mode }) => {
 
           try {
             gitHash = execSync('git rev-parse --short HEAD').toString().trim()
-          } catch (e) {
-            console.error(e)
-          }
+          } catch {}
 
           return html.replaceAll(
             '%VERSION%',
