@@ -6,12 +6,12 @@ import {
   Icon,
   Link,
   Pagex,
-  startViewTransition,
   useFx,
+  usePage,
   useQueryString,
   useResize
 } from 'nextia'
-import { lazy, useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions.js'
 
@@ -23,33 +23,23 @@ export default function Pages() {
   })
   const { state, fx } = pages
 
-  const [Page, setPage] = useState()
+  const viewTransitionRef = useRef()
   const qs = useQueryString()
   const resize = useResize(env.WINDOW_RESIZE)
-  const ref = useRef()
-
-  useEffect(() => {
-    const hash = ['', '#/'].includes(qs.hash) ? '#/home' : qs.hash
-
-    const page = lazy(async () => {
-      const path = hash.substring(2).split('/')
-
-      try {
-        if (path.length === 1) {
-          return await import(`./${path[0]}/index.jsx`)
-        } else if (path.length === 2) {
-          return await import(`./${path[0]}/${path[1]}/index.jsx`)
-        }
-      } catch (e) {
-        console.error(e)
-        return await import('./not-found.jsx')
-      }
-    })
-
-    if (env.PUBLIC_VIEW_TRANSITION === 'true')
-      startViewTransition(setPage(page), ref.current)
-    else setPage(page)
-  }, [qs.hash])
+  const Page = usePage({
+    hash: qs.hash,
+    homePage: env.HOME_PAGE,
+    importPage: async (path) => {
+      if (path === undefined) return await import(`./not-found.jsx`)
+      if (path.length === 1) return await import(`./${path[0]}/index.jsx`)
+      if (path.length === 2)
+        return await import(`./${path[0]}/${path[1]}/index.jsx`)
+    },
+    viewTransition: {
+      ref: viewTransitionRef,
+      name: env.VIEW_TRANSITION_NAME
+    }
+  })
 
   return (
     <Pagex
@@ -85,7 +75,7 @@ export default function Pages() {
         </Link>
       </aside>
 
-      <main ref={ref} className="m-2">
+      <main ref={viewTransitionRef} className="m-2">
         {Page && <Page qs={qs.queryString} resize={resize} />}
       </main>
     </Pagex>
