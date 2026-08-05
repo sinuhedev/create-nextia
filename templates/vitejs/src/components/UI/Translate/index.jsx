@@ -1,6 +1,6 @@
 import { useCx } from 'nextia'
 
-export default function UiTranslate({ className, style }) {
+export default function UITranslate({ className, style }) {
   const { context, i18n } = useCx()
 
   return (

@@ -27,6 +27,63 @@ a {
   color: var(--link);
 }
 
+p {
+  margin: 5px 0 5px;
+}
+
+pre {
+  color: gray;
+  font-size: 12px;
+  max-height: 700px;
+  overflow: auto;
+}
+
+select {
+  height: 30px;
+  width: 100px;
+}
+
+button {
+  cursor: pointer;
+  margin: 5px;
+  height: 40px;
+  padding: 0 15px 2px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input[type="text"] {
+  margin: 10px;
+  height: 30px;
+  width: 180px;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  margin: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  margin: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+label {
+  cursor: pointer;
+}
+
+.btn-md {
+  margin: 0;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
 .mr-2 {
   margin-right: 20px;
 }
@@ -50,4 +107,8 @@ a {
 
 .justify-content {
   justify-content: space-around;
+}
+
+.fs-25 {
+  font-size: 25px;
 }
