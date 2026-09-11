@@ -4,9 +4,6 @@
   "version": "0.0.22",
   "license": "MIT",
   "type": "module",
-  "engines": {
-    "node": ">=22"
-  },
   "author": {
     "name": "Sinuhe Maceda",
     "email": "sinuhe.dev@gmail.com",
@@ -27,6 +24,6 @@
     "test:my-app": "src/bin.js my-app",
     "test:version": "src/bin.js",
     "test:page": "cd my-app ; ../src/bin.js page my-page",
-    "test:component": "cd my-app ; node ../src/bin.js component MyComponent"
+    "test:component": "cd my-app ; ../src/bin.js component MyComponent"
   }
 }

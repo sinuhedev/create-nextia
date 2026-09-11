@@ -1,20 +1,19 @@
 {
-  "name": "TEMPLATE",
-  "description": "description",
   "version": "0.0.0",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite --mode dev",
-    "build": "vite build --mode"
+    "dev": "vite --mode development",
+    "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "6.0.5",
-    "vite": "8.2.0"
+    "@vitejs/plugin-react": "6.1.1",
+    "vite": "8.3.0"
   },
   "dependencies": {
     "nextia": "latest",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }

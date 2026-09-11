@@ -1,10 +1,11 @@
 import { execSync } from 'node:child_process'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import { version } from './package.json' with { type: 'json' }
+import pkg from './package.json' with { type: 'json' }
 
 export default defineConfig(({ mode }) => {
   const CWD = process.cwd()
+  const { version } = pkg
 
   return {
     server: {
@@ -22,6 +23,7 @@ export default defineConfig(({ mode }) => {
         assets: `${CWD}/src/assets`,
         components: `${CWD}/src/components`,
         services: `${CWD}/src/services`,
+        theme: `${CWD}/src/theme`,
         utils: `${CWD}/src/utils`
       }
     },

@@ -6,6 +6,8 @@ import { useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions.js'
 
+const PAGES = import.meta.glob('./**/index.jsx')
+
 export default function Pages() {
   const pages = useFx(functions, (initialState) => {
     initialState.num = 2087
@@ -18,11 +20,12 @@ export default function Pages() {
   const Page = usePage({
     hash: qs.hash,
     homePage: env.HOME_PAGE,
-    importPage: async (path) => {
-      if (path === undefined) return await import(`./not-found.jsx`)
-      if (path.length === 1) return await import(`./${path[0]}/index.jsx`)
-      if (path.length === 2)
-        return await import(`./${path[0]}/${path[1]}/index.jsx`)
+    importPage: (path) => {
+      const key = `./${path.join('/')}/index.jsx`
+      const currentPage = PAGES[key]
+
+      if (!currentPage) return import('./not-found.jsx')
+      return currentPage()
     },
     viewTransition: {
       ref: viewTransitionRef,

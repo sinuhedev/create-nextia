@@ -142,7 +142,7 @@ async function createProject(name) {
     await cp(template, projectPath, { recursive: true })
 
     await Promise.all([
-      mv('env.dev'),
+      mv('env.development'),
       mv('gitignore'),
       replaceToken('README.md', 'TEMPLATE', name),
       replaceToken('package.json', 'TEMPLATE', name),
