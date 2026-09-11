@@ -162,11 +162,13 @@ async function main() {
 
   switch (ARG1) {
     case 'vitejs':
-      await createProject(ARG2, 'vitejs')
+      if (ARG2) await createProject(ARG2, 'vitejs')
+      else console.warn('npm create nextia vitejs <ProjectName>')
       break
 
     case 'bunjs':
-      await createProject(ARG2, 'bunjs')
+      if (ARG2) await createProject(ARG2, 'bunjs')
+      else console.warn('npm create nextia bunjs <ProjectName>')
       break
 
     case 'page':
