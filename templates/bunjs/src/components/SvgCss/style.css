@@ -1,0 +1,18 @@
+.SvgCss {
+  .svg-css {
+    #label {
+      animation: svg-css_arrow 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes svg-css_arrow {
+  0%,
+  100% {
+    transform: translateY(-15px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}

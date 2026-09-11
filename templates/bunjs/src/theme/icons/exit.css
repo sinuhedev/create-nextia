@@ -1,0 +1,55 @@
+#exit.animate {
+  transition: transform 200ms linear;
+
+  #ring {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 1;
+    transition:
+      stroke-dashoffset 400ms linear,
+      stroke-dasharray 400ms linear;
+  }
+
+  #arrow {
+    animation: exit_arrow 2s ease-in-out infinite;
+
+    #right,
+    #left {
+      display: none;
+    }
+  }
+
+  &:hover {
+    transform: rotate(-90deg);
+
+    #ring {
+      stroke-dasharray: 200, 1;
+      stroke: var(--primary-color);
+      stroke-width: 4px;
+    }
+
+    #arrow {
+      transform: translateY(2px);
+      stroke: var(--primary-color);
+
+      line {
+        stroke-width: 4px;
+      }
+
+      #right,
+      #left {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes exit_arrow {
+  0%,
+  100% {
+    transform: translateY(2px);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}

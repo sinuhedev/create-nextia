@@ -1,0 +1,21 @@
+{
+  "name": "TEMPLATE",
+  "description": "description",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "BUN_ENV=development bun web.js serve",
+    "build:dev": "BUN_ENV=development bun web.js build",
+    "build:prod": "BUN_ENV=production bun web.js build",
+    "test": "bun test",
+    "test:name": "bun test --test-name-pattern",
+    "test:coverage": "bun test --coverage"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "nextia": "latest",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

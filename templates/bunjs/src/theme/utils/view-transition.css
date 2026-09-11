@@ -1,0 +1,72 @@
+:root {
+  view-transition-name: none;
+}
+
+/* fade */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+::view-transition-old(fade) {
+  animation: fade-out ease 0.3s forwards;
+}
+
+::view-transition-new(fade) {
+  animation: fade-in ease 0.3s forwards;
+}
+
+/* count */
+
+@keyframes count-in {
+  from {
+    scale: 1 0;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+
+@keyframes count-out {
+  from {
+    scale: 1 1;
+  }
+  to {
+    scale: 1 0;
+  }
+}
+
+::view-transition-new(count) {
+  animation: count-in 0.25s forwards;
+  transform-origin: 50% 0;
+}
+
+::view-transition-old(count) {
+  animation: count-out 0.25s forwards;
+  transform-origin: 50% 100%;
+}
+
+/* count2 */
+
+::view-transition-new(count2) {
+  animation: count-in 0.25s forwards;
+  transform-origin: 10% 100%;
+}
+
+::view-transition-old(count2) {
+  animation: count-out 0.25s forwards;
+  transform-origin: 10% 0%;
+}

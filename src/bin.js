@@ -114,7 +114,7 @@ export default function ${componentName}({ className, style }) {
   }
 }
 
-async function createProject(name) {
+async function createProject(name, type) {
   const projectPath = `${process.cwd()}/${name}/`
 
   // Check project
@@ -125,7 +125,7 @@ async function createProject(name) {
     return
   } catch {}
 
-  const template = `${dirname(fileURLToPath(import.meta.url))}/../templates/vitejs`
+  const template = `${dirname(fileURLToPath(import.meta.url))}/../templates/${type}`
 
   const mv = (fileName) =>
     rename(`${projectPath}_${fileName}`, `${projectPath}.${fileName}`)
@@ -161,6 +161,14 @@ async function main() {
   const ARG2 = process.argv[3]
 
   switch (ARG1) {
+    case 'vitejs':
+      await createProject(ARG2, 'vitejs')
+      break
+
+    case 'bunjs':
+      await createProject(ARG2, 'bunjs')
+      break
+
     case 'page':
       if (ARG2) await createPage(ARG2)
       else console.warn('npm create nextia page <page-name>')
@@ -172,11 +180,15 @@ async function main() {
       break
 
     default:
-      if (ARG1) await createProject(ARG1)
-      else {
-        console.info(`nextia v${version}`)
-        console.warn('npm create nextia <ProjectName>')
-      }
+      console.info(`
+          nextia v${version}
+
+          npm create nextia vitejs <ProjectName>
+          npm create nextia bunjs <ProjectName>
+
+          npm create nextia page <page-name>
+          npm create nextia component <ComponentName>
+        `)
       break
   }
 }
