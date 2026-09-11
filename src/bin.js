@@ -19,9 +19,9 @@ import {
 } from 'node:fs/promises'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import packageJson from '../package.json' with { type: 'json' }
+import pkg from '../package.json' with { type: 'json' }
 
-const { version } = packageJson
+const { version } = pkg
 
 const toPascalCase = (str) =>
   str
@@ -156,7 +156,6 @@ async function createProject(name) {
 /**
  * main
  */
-
 async function main() {
   const ARG1 = process.argv[2]
   const ARG2 = process.argv[3]
