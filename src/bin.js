@@ -23,8 +23,6 @@ import readline from 'node:readline/promises'
 import { fileURLToPath } from 'node:url'
 import pkg from '../package.json' with { type: 'json' }
 
-const { version } = pkg
-
 const toPascalCase = (str) =>
   str
     .split(/[/_ -]+/)
@@ -35,7 +33,6 @@ const toPascalCase = (str) =>
 const getNextiaVersion = async () => {
   const res = await fetch(`https://registry.npmjs.org/nextia`)
   const data = await res.json()
-
   return data['dist-tags'].latest
 }
 
@@ -188,25 +185,25 @@ async function createProject(name) {
 /**
  * main
  */
-const ARG1 = process.argv[2]
-const ARG2 = process.argv[3]
+const command = process.argv[2]
+const name = process.argv[3]
 
-switch (ARG1) {
+switch (command) {
   case 'page':
-    if (ARG2) await createPage(ARG2)
+    if (name) await createPage(name)
     else console.warn('npm create nextia page <page-name>')
     break
 
   case 'component':
-    if (ARG2) await createComponent(ARG2)
+    if (name) await createComponent(name)
     else console.warn('npm create nextia component <ComponentName>')
     break
 
   default:
-    if (ARG1) await createProject(ARG1)
+    if (command) await createProject(command)
     else
       console.info(`
-          nextia v${version}
+          nextia v${pkg.version}
 
           npm create nextia <ProjectName>
           npm create nextia page <page-name>
