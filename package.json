@@ -22,8 +22,7 @@
   },
   "scripts": {
     "test": "src/bin.js",
-    "test:vitejs": "src/bin.js vitejs my-app-vitejs",
-    "test:bunjs": "src/bin.js bunjs my-app-bunjs",
+    "test:my-app": "src/bin.js my-app",
     "test:page": "cd my-app ; ../src/bin.js page my-page",
     "test:component": "cd my-app ; ../src/bin.js component MyComponent"
   }

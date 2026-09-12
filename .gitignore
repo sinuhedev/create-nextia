@@ -1,6 +1,6 @@
 node_modules
 
-my-app-*
+my-app
 
 templates/*/.env*
 templates/*/package-lock.json

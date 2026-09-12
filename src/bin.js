@@ -18,6 +18,8 @@ import {
   writeFile
 } from 'node:fs/promises'
 import { dirname } from 'node:path'
+import { stdin as input, stdout as output } from 'node:process'
+import readline from 'node:readline/promises'
 import { fileURLToPath } from 'node:url'
 import pkg from '../package.json' with { type: 'json' }
 
@@ -114,11 +116,39 @@ export default function ${componentName}({ className, style }) {
   }
 }
 
-async function createProject(name, type) {
-  const projectPath = `${process.cwd()}/${name}/`
+async function typeProject() {
+  const rl = readline.createInterface({ input, output })
+  const options = ['vitejs', 'bunjs']
+
+  console.log(options.map((op, i) => `  ${i + 1}. ${op}`).join('\n'))
+
+  try {
+    let reponse = await rl.question('Option: ')
+    const index = Number(reponse.trim())
+
+    if (Number.isInteger(index) && index >= 1 && index <= options.length)
+      reponse = options[index - 1]
+    else reponse = null
+
+    return reponse
+  } catch (err) {
+    if (err.code === 'ABORT_ERR') {
+      process.exit(0)
+    }
+    throw err
+  } finally {
+    rl.close()
+  }
+}
+
+async function createProject(name) {
+  // Type project
+  const type = await typeProject()
+  if (!type) return
 
   // Check project
 
+  const projectPath = `${process.cwd()}/${name}/`
   try {
     await access(projectPath)
     console.error(`The "${name}" already exists.`)
@@ -151,50 +181,36 @@ async function createProject(name, type) {
   } catch (err) {
     console.error(err)
   }
+
+  console.info('Done!')
 }
 
 /**
  * main
  */
-async function main() {
-  const ARG1 = process.argv[2]
-  const ARG2 = process.argv[3]
+const ARG1 = process.argv[2]
+const ARG2 = process.argv[3]
 
-  switch (ARG1) {
-    case 'vitejs':
-      if (ARG2) await createProject(ARG2, 'vitejs')
-      else console.warn('npm create nextia vitejs <ProjectName>')
-      break
+switch (ARG1) {
+  case 'page':
+    if (ARG2) await createPage(ARG2)
+    else console.warn('npm create nextia page <page-name>')
+    break
 
-    case 'bunjs':
-      if (ARG2) await createProject(ARG2, 'bunjs')
-      else console.warn('npm create nextia bunjs <ProjectName>')
-      break
+  case 'component':
+    if (ARG2) await createComponent(ARG2)
+    else console.warn('npm create nextia component <ComponentName>')
+    break
 
-    case 'page':
-      if (ARG2) await createPage(ARG2)
-      else console.warn('npm create nextia page <page-name>')
-      break
-
-    case 'component':
-      if (ARG2) await createComponent(ARG2)
-      else console.warn('npm create nextia component <ComponentName>')
-      break
-
-    default:
+  default:
+    if (ARG1) await createProject(ARG1)
+    else
       console.info(`
           nextia v${version}
 
-          npm create nextia vitejs <ProjectName>
-          npm create nextia bunjs <ProjectName>
-
+          npm create nextia <ProjectName>
           npm create nextia page <page-name>
           npm create nextia component <ComponentName>
         `)
-      break
-  }
+    break
 }
-
-main().catch((e) => {
-  console.error(e)
-})
