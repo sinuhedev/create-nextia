@@ -7,3 +7,5 @@ templates/*/package-lock.json
 templates/*/bun.lock
 
 /biome.json
+
+package-lock.json

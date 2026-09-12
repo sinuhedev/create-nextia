@@ -5,3 +5,5 @@ my-app
 templates/*/.env*
 templates/*/package-lock.json
 templates/*/bun.lock
+
+package-lock.json
