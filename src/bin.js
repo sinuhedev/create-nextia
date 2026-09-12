@@ -115,7 +115,7 @@ export default function ${componentName}({ className, style }) {
 
 async function typeProject() {
   const rl = readline.createInterface({ input, output })
-  const options = ['vitejs', 'bunjs']
+  const options = ['bunjs', 'vitejs']
 
   console.log(options.map((op, i) => `  ${i + 1}. ${op}`).join('\n'))
 
