@@ -1,7 +1,7 @@
 import i18n from 'assets/i18n.json'
 import icons from 'assets/icons.svg' with { type: 'text' }
 import { Translate } from 'components'
-import { I18n, Icon, Link, Pagex, useFx, usePage, useQueryString } from 'nextia'
+import { I18n, Icon, Link, Pagex, useFx, usePage } from 'nextia'
 import { useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions.js'
@@ -21,14 +21,17 @@ const PAGES = {
 }
 
 export default function Pages() {
-  const pages = useFx(functions, (initialState) => {
-    initialState.num = 2087
-    return initialState
-  })
-  const { state, fx } = pages
+  const pages = useFx(
+    {
+      i18n: window.localStorage.getItem('i18n') || i18n.defaultLocale,
+      loading: false,
+      num: 2087
+    },
+    functions
+  )
+  const { state, fx, qs } = pages
 
   const viewTransitionRef = useRef()
-  const qs = useQueryString()
   const Page = usePage({
     hash: qs.hash,
     homePage: env.HOME_PAGE,
@@ -53,7 +56,11 @@ export default function Pages() {
       <header style={{ display: 'flex', gap: '20px', margin: '20px' }}>
         <Icon id="globe" width="24" />
 
-        <Translate />
+        <Translate
+          value={state.i18n}
+          onChange={fx.changeI18n}
+          locales={i18n.locales}
+        />
 
         <I18n value="page.name" args={['Sinuhe', 'Maceda', 'Bouchan']} />
 
@@ -130,7 +137,7 @@ export default function Pages() {
       </aside>
 
       <main ref={viewTransitionRef} className="m-2">
-        {Page && <Page qs={qs.queryString} />}
+        {Page && <Page />}
       </main>
     </Pagex>
   )

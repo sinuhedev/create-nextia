@@ -1,9 +1,11 @@
 import { Counter } from 'components'
 import { useFx } from 'nextia'
-import functions from './functions'
 
 export default function ViewTransitionPage() {
-  const { state, fx } = useFx(functions)
+  const { state, fx } = useFx({
+    count: 1,
+    count2: 1
+  })
 
   return (
     <section>

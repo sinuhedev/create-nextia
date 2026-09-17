@@ -1,15 +1,5 @@
 import api from 'services/api'
 
-const initialState = {
-  users: [],
-  user: {},
-  status: '',
-  form: {
-    id: 0,
-    name: ''
-  }
-}
-
 async function users({ payload, put }) {
   const { ok, status, data } = await api.getUser({
     path: { id: payload }
@@ -59,7 +49,6 @@ async function deleteUser({ payload, put }) {
 }
 
 export default {
-  initialState,
   users,
   createUser,
   updateUser,

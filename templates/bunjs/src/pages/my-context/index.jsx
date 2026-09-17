@@ -1,12 +1,9 @@
 import { useFx } from 'nextia'
 import { useEffect } from 'react'
-import functions from './functions'
 
 export default function MyContext() {
-  const { state, fx, context } = useFx(functions, (initialState) => {
-    return {
-      currentNum: initialState.currentNum + 1
-    }
+  const { state, fx, context } = useFx({
+    currentNum: 200
   })
 
   useEffect(() => {
