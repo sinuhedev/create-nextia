@@ -50,7 +50,7 @@ async function createPage(name) {
 import functions from './functions'
 
 export default function ${pageName}() {
-    const { state, fx } = useFx(functions)
+    const { state, fx } = useFx({},functions)
 
   return (
     <section>
@@ -64,10 +64,7 @@ export default function ${pageName}() {
     // function.js
     writeFile(
       `${dirName}/functions.js`,
-      `const initialState = {}
-
-export default {
-  initialState
+      `export default {
 }
 `
     )
