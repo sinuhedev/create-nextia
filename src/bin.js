@@ -113,7 +113,7 @@ export default function ${componentName}({ className, style }) {
   }
 }
 
-async function typeProject() {
+async function projectType() {
   const rl = readline.createInterface({ input, output })
   const options = ['bunjs', 'vitejs']
 
@@ -140,7 +140,7 @@ async function typeProject() {
 
 async function createProject(name) {
   // Type project
-  const type = await typeProject()
+  const type = await projectType()
   if (!type) return
 
   // Check project
