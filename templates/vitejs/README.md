@@ -1,4 +1,5 @@
 # To start
+
 Open http://localhost:3000 to view it in the browser.
 
 ```sh
@@ -11,6 +12,7 @@ node --run build:prod
 ```
 
 # env
+
 ```.env
 .env       # loaded in all cases
 .env.[ENV] # only loaded in specified ENV [ development, test, production ]
