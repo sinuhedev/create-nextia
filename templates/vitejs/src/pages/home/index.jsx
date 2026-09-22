@@ -1,8 +1,8 @@
 import { useFx } from 'nextia'
 import functions from './functions'
 
-export default function HomePage() {
-  const { state, initialState, fx, context } = useFx(
+export default function HomePage({ context }) {
+  const { state, initialState, fx } = useFx(
     {
       id: 0,
       title: 'TITLE NAME',

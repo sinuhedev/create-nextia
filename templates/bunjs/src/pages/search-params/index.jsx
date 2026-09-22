@@ -1,9 +1,7 @@
-import { Link, useFx } from 'nextia'
+import { Link } from 'nextia'
 import { useEffect } from 'react'
 
-export default function SearchParamsPage() {
-  const { qs } = useFx()
-
+export default function SearchParamsPage({ qs }) {
   useEffect(() => {
     console.info(qs)
   }, [qs])

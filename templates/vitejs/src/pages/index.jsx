@@ -1,7 +1,7 @@
 import i18n from 'assets/i18n.json'
 import icons from 'assets/icons.svg?raw'
 import { Translate } from 'components'
-import { I18n, Icon, Link, Pagex, useFx, usePage } from 'nextia'
+import { I18n, Icon, Link, Pagex, useFx, usePage, useQueryString } from 'nextia'
 import { useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions.js'
@@ -17,8 +17,8 @@ export default function Pages() {
     },
     functions
   )
-  const { state, fx, qs } = pages
-
+  const { state, fx } = pages
+  const qs = useQueryString()
   const viewTransitionRef = useRef()
   const Page = usePage({
     hash: qs.hash,
@@ -128,7 +128,7 @@ export default function Pages() {
       </aside>
 
       <main ref={viewTransitionRef} className="m-2">
-        {Page && <Page />}
+        {Page && <Page context={pages} qs={qs} />}
       </main>
     </Pagex>
   )

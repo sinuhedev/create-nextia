@@ -19,8 +19,8 @@ node --run build:prod
 ```
 
  * .env.development
- * .env.test
  * .env.production
+ * .env.test
  
 ```env
 PUBLIC_TITLE=dev

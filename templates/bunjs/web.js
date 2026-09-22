@@ -34,6 +34,7 @@ const envPlugin = {
 /**
  * serve
  */
+
 if (ARG === 'serve') {
   const server = Bun.serve({
     hostname: '0.0.0.0',
@@ -54,6 +55,7 @@ if (ARG === 'serve') {
 /**
  * build
  */
+
 if (ARG === 'build') {
   const outdir = './out'
   await rm(outdir, { recursive: true, force: true })

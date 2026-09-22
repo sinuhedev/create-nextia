@@ -5,10 +5,10 @@ Open http://localhost:3000 to view it in the browser.
 ```sh
 npm install
 #
-node --run dev
-node --run test
-node --run build:dev
-node --run build:prod
+bun dev
+bun test
+bun run build:dev
+bun run build:prod
 ```
 
 # env
@@ -19,8 +19,8 @@ node --run build:prod
 ```
 
  * .env.development
- * .env.test
  * .env.production
+ * .env.test
  
 ```env
 PUBLIC_TITLE=dev
