@@ -7,8 +7,8 @@ const { version } = pkg
 const ENV = process.env.BUN_ENV
 const ARG = process.argv[2]
 
-const envPlugin = {
-  name: 'inject-env-html',
+const plugins = {
+  name: 'plugins',
   setup(build) {
     build.onLoad({ filter: /\.html$/ }, async (args) => {
       let gitHash = 'unknown'
@@ -66,7 +66,7 @@ if (ARG === 'build') {
     target: 'browser',
     minify: true,
     env: 'PUBLIC_*',
-    plugins: [envPlugin]
+    plugins: [plugins]
   })
 
   await cp('./public', './out', { recursive: true })
@@ -77,4 +77,4 @@ if (ARG === 'build') {
   }
 }
 
-export default envPlugin
+export default plugins
