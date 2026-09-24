@@ -7,6 +7,7 @@ import { env } from 'utils'
 import functions from './functions.js'
 
 const PAGES = import.meta.glob('./**/index.jsx')
+const NOT_FOUND = () => import(`./not-found.jsx`)
 
 export default function Pages() {
   const pages = useFx(
@@ -17,23 +18,18 @@ export default function Pages() {
     },
     functions
   )
+
   const { state, fx } = pages
+
   const qs = useQueryString()
   const viewTransitionRef = useRef()
-  const Page = usePage({
-    hash: qs.hash,
-    homePage: env.HOME_PAGE,
-    importPage: (path) => {
-      const key = `./${path.join('/')}/index.jsx`
-      const currentPage = PAGES[key]
 
-      if (!currentPage) return import('./not-found.jsx')
-      return currentPage()
-    },
-    viewTransition: {
-      ref: viewTransitionRef,
-      name: env.VIEW_TRANSITION_NAME
-    }
+  const Page = usePage({
+    hashPage: qs.hash,
+    homePage: env.HOME_PAGE,
+    currentPage: (path) => PAGES[`./${path.join('/')}/index.jsx`] ?? NOT_FOUND,
+    viewTransition: viewTransitionRef,
+    viewTransitionName: env.VIEW_TRANSITION_NAME
   })
 
   return (

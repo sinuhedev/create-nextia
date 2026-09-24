@@ -30,19 +30,16 @@ export default function Pages() {
     functions
   )
   const { state, fx } = pages
+
   const qs = useQueryString()
   const viewTransitionRef = useRef()
+
   const Page = usePage({
-    hash: qs.hash,
+    hashPage: qs.hash,
     homePage: env.HOME_PAGE,
-    importPage: (path) => {
-      const currentPage = PAGES[path.join('/')] ?? PAGES.notFound
-      return currentPage()
-    },
-    viewTransition: {
-      ref: viewTransitionRef,
-      name: env.VIEW_TRANSITION_NAME
-    }
+    currentPage: (path) => PAGES[path.join('/')] ?? PAGES.notFound,
+    viewTransition: viewTransitionRef,
+    viewTransitionName: env.VIEW_TRANSITION_NAME
   })
 
   return (
